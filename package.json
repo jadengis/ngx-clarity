@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "build": "nx build ngx-clarity && cp README.md dist/packages/ngx-clarity/README.md",
+    "test": "nx test ngx-clarity",
+    "lint": "nx workspace-lint && nx lint ngx-clarity",
     "postinstall": "ngcc --properties es2015 browser module main"
   },
   "private": true,
