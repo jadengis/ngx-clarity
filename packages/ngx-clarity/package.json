@@ -1,9 +1,35 @@
 {
   "name": "ngx-clarity",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Angular module to add the tracking code for microsoft.clarity.com",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jadengis/ngx-clarity/issues"
+  },
+  "homepage": "https://github.com/jadengis/ngx-clarity#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jadengis/ngx-clarity"
+  },
+  "keywords": [
+    "angular",
+    "angular 2",
+    "ngx clarity",
+    "analytics",
+    "microsoft-clarity",
+    "heatmap",
+    "session recording"
+  ],
+  "author": {
+    "name": "John Dengis",
+    "email": "jadengis@gmail.com"
+  },
   "peerDependencies": {
-    "@angular/common": "^13.3.0",
-    "@angular/core": "^13.3.0"
+    "@angular/common": ">=13 <15",
+    "@angular/core": ">=13 <15"
   },
   "dependencies": {
     "tslib": "^2.3.0"

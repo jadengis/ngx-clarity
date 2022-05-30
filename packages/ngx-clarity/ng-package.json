@@ -3,5 +3,6 @@
   "dest": "../../dist/packages/ngx-clarity",
   "lib": {
     "entryFile": "src/index.ts"
-  }
+  },
+  "assets": ["LICENSE", "CHANGELOG.md"]
 }

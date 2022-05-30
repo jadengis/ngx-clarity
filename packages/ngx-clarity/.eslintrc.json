@@ -24,7 +24,8 @@
             "prefix": "ngx-clarity",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@typescript-eslint/ban-types": ["off"]
       }
     },
     {
