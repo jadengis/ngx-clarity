@@ -1,30 +1,28 @@
 import { DOCUMENT } from '@angular/common';
 import { getTestBed } from '@angular/core/testing';
-import { NgxClarityModule } from './ngx-clarity.module';
+import { provideClarity } from './ngx-clarity';
 
-describe('NgxClarityModule', () => {
+describe('provideClarity', () => {
   const projectId = 'projectId';
 
   afterEach(() => {
     fetchScript()?.remove();
   });
 
-  describe('with module enabled', () => {
+  describe('when enabled', () => {
     configureEnvironment(true);
 
     it('should bootstrap and inject clarity script', () => {
-      expect(getTestBed().inject(NgxClarityModule)).toBeTruthy();
       const script = fetchScript();
       expect(script).toBeTruthy();
       expect(script.async).toEqual(1);
     });
   });
 
-  describe('with module disabled', () => {
+  describe('when disabled', () => {
     configureEnvironment(false);
 
     it('should bootstrap but not inject clarity script', () => {
-      expect(getTestBed().inject(NgxClarityModule)).toBeTruthy();
       const script = fetchScript();
       expect(script).toBeFalsy();
     });
@@ -40,12 +38,7 @@ describe('NgxClarityModule', () => {
   function configureEnvironment(enabled: boolean) {
     beforeEach(() => {
       getTestBed().configureTestingModule({
-        imports: [
-          NgxClarityModule.forRoot({
-            enabled,
-            projectId,
-          }),
-        ],
+        providers: [provideClarity({ enabled, projectId })],
       });
     });
   }

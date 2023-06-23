@@ -1,1 +1,1 @@
-export * from './lib/ngx-clarity.module';
+export * from './lib/ngx-clarity';

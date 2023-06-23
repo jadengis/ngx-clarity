@@ -1,35 +1,59 @@
 {
-  "extends": "nx/presets/core.json",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "ngx-clarity",
-  "affected": {
-    "defaultBase": "main"
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "ZDMzMWViMTMtNTEzNy00MWYzLWJmZDYtNzgxYTEyNDc0MmEyfHJlYWQtd3JpdGU="
       }
     }
   },
+  "extends": "nx/presets/core.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "ngx-clarity",
+  "affected": {
+    "defaultBase": "main"
+  },
   "generators": {
-    "@nrwl/angular:application": {
+    "@nx/angular:application": {
       "style": "css",
       "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nrwl/angular:library": {
+    "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
+    "@nx/angular:component": {
       "style": "css"
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [],
+    "production": [
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "test": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    }
+  },
+  "pluginsConfig": {
+    "@nrwl/js": {
+      "analyzeSourceFiles": true
     }
   }
 }
