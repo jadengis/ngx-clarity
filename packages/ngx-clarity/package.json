@@ -28,8 +28,8 @@
     "email": "jadengis@gmail.com"
   },
   "peerDependencies": {
-    "@angular/common": ">=13 <15",
-    "@angular/core": ">=13 <15"
+    "@angular/common": ">=15 <17",
+    "@angular/core": ">=15 <17"
   },
   "dependencies": {
     "tslib": "^2.3.0"
