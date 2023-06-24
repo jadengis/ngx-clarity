@@ -1,6 +1,6 @@
 {
   "name": "ngx-clarity",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Angular module to add the tracking code for microsoft.clarity.com",
   "publishConfig": {
     "access": "public"

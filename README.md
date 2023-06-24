@@ -4,8 +4,7 @@
 [![Test](https://github.com/jadengis/ngx-clarity/actions/workflows/build.yml/badge.svg)](https://github.com/jadengis/ngx-clarity/actions/workflows/build.yml)
 [![Lint](https://github.com/jadengis/ngx-clarity/actions/workflows/lint.yml/badge.svg)](https://github.com/jadengis/ngx-clarity/actions/workflows/lint.yml)
 
-
-A useful Angular module that automatically injects the script tag required to use [Microsoft Clarity](https://clarity.microsoft.com/).
+A useful Angular library that automatically injects the script tag required to use [Microsoft Clarity](https://clarity.microsoft.com/).
 
 ## Installation
 
@@ -26,6 +25,7 @@ yarn add ngx-clarity
 | Version | Angular Version |
 | ------- | --------------- |
 | `1.x.x` | `>=13 <15`      |
+| `2.x.x` | `>=15 <17`      |
 
 ## Features
 
@@ -33,20 +33,31 @@ yarn add ngx-clarity
 
 ## Usage
 
-Import the `NgxClarityModule` into your `AppModule` using the `forRoot` method to provide the required configuration.
+Import `provideClarity` from `ngx-clarity` and pass the required configuration when using it as a provider during application bootstrap.
 
 ```typescript
-import { NgxClarityModule } from 'ngx-clarity';
+import { provideClarity } from 'ngx-clarity';
 
 @NgModule({
-  imports: [
-    NgxClarityModule.forRoot({
+  providers: [
+    provideClarity({
       enabled: true,
       projectId: 'my-project-id',
     }),
   ],
 })
 export class AppModule {}
+
+// Or if you are using standalone bootstrap
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideClarity({
+      enabled: true,
+      projectId: 'my-project-id',
+    }),
+  ],
+});
 ```
 
 The supported configuration parameters are:
