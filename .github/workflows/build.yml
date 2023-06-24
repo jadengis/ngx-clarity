@@ -1,4 +1,4 @@
-name: Test
+name: Build
 
 on: push
 
@@ -11,7 +11,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
       - name: Cache .npm
         id: npm-cache
         uses: actions/cache@v2
@@ -32,5 +32,5 @@ jobs:
       - name: Install dependencies
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm install
-      - name: Lint workspace
-        run: npm run test
+      - name: Build library
+        run: npm run build
