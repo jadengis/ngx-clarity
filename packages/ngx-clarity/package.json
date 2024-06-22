@@ -1,6 +1,6 @@
 {
   "name": "ngx-clarity",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Angular module to add the tracking code for microsoft.clarity.com",
   "publishConfig": {
     "access": "public"
@@ -25,11 +25,11 @@
   ],
   "author": {
     "name": "John Dengis",
-    "email": "jadengis@gmail.com"
+    "email": "john@deng.is"
   },
   "peerDependencies": {
-    "@angular/common": ">=15 <18",
-    "@angular/core": ">=15 <18"
+    "@angular/common": ">=15 <19",
+    "@angular/core": ">=15 <19"
   },
   "dependencies": {
     "tslib": "^2.3.0"
