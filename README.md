@@ -25,7 +25,7 @@ yarn add ngx-clarity
 | Version | Angular Version |
 | ------- | --------------- |
 | `1.x.x` | `>=13 <15`      |
-| `2.x.x` | `>=15 <18`      |
+| `2.x.x` | `>=15 <20`      |
 
 ## Features
 
